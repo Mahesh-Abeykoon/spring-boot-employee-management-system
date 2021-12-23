@@ -21,9 +21,12 @@ public class EmployeeController {
 		this.employeeService = employeeService;
 	}
 	
+	//Create an employee API
 	@PostMapping()
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
 
 		return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED); 
 	}
+	
+	
 }												
