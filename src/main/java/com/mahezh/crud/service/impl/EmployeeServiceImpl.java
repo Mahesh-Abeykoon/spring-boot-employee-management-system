@@ -1,5 +1,7 @@
 package com.mahezh.crud.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.mahezh.crud.model.Employee;
@@ -15,6 +17,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		super();
 		this.employeeRepository = employeeRepository;
 	}
+	
+	
+	
 
 	@Override
 	public Employee saveEmployee(Employee employee) {
@@ -22,5 +27,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepository.save(employee);
 	}
 
+	
+	@Override
+	public List<Employee> getAllEmployees() {
+		
+		return employeeRepository.findAll();
+	}
 	 
 }
